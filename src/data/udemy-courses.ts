@@ -27,7 +27,7 @@ export interface UdemyCourse {
 export const udemyCourses: UdemyCourse[] = [
   {
     id: "programacion-desarrollo-web",
-    url: "https://www.udemy.com/course/programacion-desarrollo-web/?couponCode=ACB6C2",
+    url: "https://www.udemy.com/course/programacion-desarrollo-web/?couponCode=088351F",
     image: imgCurosWeb,
     title: "Escuela de Programación y Desarrollo Web desde cero a Master",
     headline:
@@ -53,7 +53,7 @@ export const udemyCourses: UdemyCourse[] = [
   },
   {
     id: "curso-flask",
-    url: "https://www.udemy.com/course/curso-flask/?couponCode=87101A",
+    url: "https://www.udemy.com/course/curso-flask/?couponCode=F0EE9DD",
     image: imgCursoFlask,
     title: "Flask - Construye aplicaciones web profesionales con Python",
     headline:
@@ -70,7 +70,7 @@ export const udemyCourses: UdemyCourse[] = [
   },
   {
     id: "curso-profecional-go",
-    url: "https://www.udemy.com/course/curso-golang/?couponCode=6DA218",
+    url: "https://www.udemy.com/course/curso-golang/?couponCode=176D331F",
     image: imgCursoGo,
     title: "Curso profesional de Go - De cero a Master 2024",
     headline:
@@ -87,7 +87,7 @@ export const udemyCourses: UdemyCourse[] = [
   },
   {
     id: "curso-go-guia",
-    url: "https://www.udemy.com/course/cursodego-golang/?couponCode=28624E",
+    url: "https://www.udemy.com/course/cursodego-golang/?couponCode=265B4E",
     image: imgCursoGoGuia,
     title: "Aprende Go: La guía completa para dominar Golang",
     headline:
@@ -104,7 +104,7 @@ export const udemyCourses: UdemyCourse[] = [
   },
   {
     id: "curso-html-css",
-    url: "https://www.udemy.com/course/html-y-css/?couponCode=4859DA",
+    url: "https://www.udemy.com/course/html-y-css/?couponCode=A024D8",
     image: imgCursoHtmlCss,
     title: "Curso completo de HTML y CSS, Aprende Flexbox, Grid y BEM",
     headline:
@@ -121,7 +121,7 @@ export const udemyCourses: UdemyCourse[] = [
   },
   {
     id: "curso-profesional-java",
-    url: "https://www.udemy.com/course/curso-completo-de-java/?couponCode=5760A1",
+    url: "https://www.udemy.com/course/curso-completo-de-java/?couponCode=B5511ED",
     image: imgCursoJava,
     title: "Curso profesional de Java 2024 –De cero a Master",
     headline:
@@ -138,7 +138,7 @@ export const udemyCourses: UdemyCourse[] = [
   },
   {
     id: "curso-completo-python",
-    url: "https://www.udemy.com/course/curso-completo-de-python-desde-cero-hasta-experto/?couponCode=1B87F0A",
+    url: "https://www.udemy.com/course/curso-completo-de-python-desde-cero-hasta-experto/?couponCode=74C1A9",
     image: imgCursoPython,
     title: "Curso completo de Python 2024-De cero a Master con Python 3",
     headline:
@@ -155,7 +155,7 @@ export const udemyCourses: UdemyCourse[] = [
   },
   {
     id: "curso-tailwindcss",
-    url: "https://www.udemy.com/course/curso-tailwindcss/?couponCode=ED942F",
+    url: "https://www.udemy.com/course/curso-tailwindcss/?couponCode=8B1E29",
     image: imgCursoTailwind,
     title: "Curso profesional de TailwindCSS V4 desde cero",
     headline:
