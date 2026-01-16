@@ -1,200 +1,179 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Button from "../components/utils/Button.astro";
+import UdemyInfoSection from "@/components/sections/UdemyInfoSection.astro";
 import { Icon } from "astro-icon/components";
+import CoursesPreviewSection from "../components/sections/CoursesPreviewSection.astro";
 import StatsSection from "../components/sections/StatsSection.astro";
 import TechStackSection from "../components/sections/TechStackSection.astro";
-import CoursesPreviewSection from "../components/sections/CoursesPreviewSection.astro";
 import TestimonialGrid from "../components/sections/TestimonialGrid.astro";
-import UdemyInfoSection from "@/components/sections/UdemyInfoSection.astro";
+import Layout from "../layouts/Layout.astro";
 
 // Schema markup para la página principal
 const homeSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Roel Code",
-  "url": "https://roelcode.github.io",
-  "description": "Instructor de programación especializado en desarrollo web. Cursos de HTML, CSS, JavaScript, Python, Go, Java y más.",
-  "potentialAction": {
+  name: "Roel Code",
+  url: "https://roelcode.github.io",
+  description:
+    "Instructor de programación especializado en desarrollo web. Cursos de HTML, CSS, JavaScript, Python, Go, Java y más.",
+  potentialAction: {
     "@type": "SearchAction",
-    "target": "https://roelcode.github.io/cursos?search={search_term_string}",
-    "query-input": "required name=search_term_string"
+    target: "https://roelcode.github.io/cursos?search={search_term_string}",
+    "query-input": "required name=search_term_string",
   },
-  "author": {
+  author: {
     "@type": "Person",
-    "name": "Roel Code",
-    "jobTitle": "Desarrollador Full Stack & Instructor",
-    "url": "https://roelcode.github.io/acerca-de"
+    name: "Roel Code",
+    jobTitle: "Desarrollador Full Stack & Instructor",
+    url: "https://roelcode.github.io/acerca-de",
   },
-  "mainEntity": {
+  mainEntity: {
     "@type": "EducationalOrganization",
-    "name": "Roel Code Academy",
-    "description": "Plataforma educativa especializada en programación y desarrollo web",
-    "hasCredential": {
+    name: "Roel Code Academy",
+    description:
+      "Plataforma educativa especializada en programación y desarrollo web",
+    hasCredential: {
       "@type": "EducationalOccupationalCredential",
-      "name": "Certificados de Programación",
-      "credentialCategory": "certificate"
-    }
-  }
+      name: "Certificados de Programación",
+      credentialCategory: "certificate",
+    },
+  },
 };
 
 // Schema para organización
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
-  "name": "Roel Code",
-  "url": "https://roelcode.github.io",
-  "logo": "https://roelcode.github.io/favicon.svg",
-  "description": "Instructor de programación con más de 8 años de experiencia",
-  "founder": {
+  name: "Roel Code",
+  url: "https://roelcode.github.io",
+  logo: "https://roelcode.github.io/favicon.svg",
+  description: "Instructor de programación con más de 8 años de experiencia",
+  founder: {
     "@type": "Person",
-    "name": "Roel Code"
+    name: "Roel Code",
   },
-  "numberOfEmployees": 1,
-  "foundingDate": "2016",
-  "areaServed": "Worldwide",
-  "serviceType": "Educación en Programación"
+  numberOfEmployees: 1,
+  foundingDate: "2016",
+  areaServed: "Worldwide",
+  serviceType: "Educación en Programación",
 };
 ---
 
-<Layout 
+<Layout
   title="Roelcode | Desarrollador Full Stack & Instructor"
   schema={[homeSchema, organizationSchema]}
   keywords="Roel Code, programación, desarrollo web, instructor, cursos online, JavaScript, Python, Go, Java"
   type="website"
 >
   <main>
-    <!-- Hero Section - Integrado directamente -->
+    <!-- Hero Section - Futuristic -->
     <section
-      class="relative min-h-screen flex items-center justify-center overflow-hidden"
+      class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-animate"
     >
-      <!-- Background con gradiente animado -->
+      <!-- Grid Pattern -->
+      <div class="absolute inset-0 bg-grid-futuristic opacity-30"></div>
+
+      <!-- Floating Orbs -->
       <div
-        class="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950"
+        class="absolute top-20 left-10 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl animate-float"
       >
       </div>
-
-      <!-- Elementos decorativos de fondo -->
-      <div class="absolute inset-0 overflow-hidden">
-        <div
-          class="absolute -top-40 -right-40 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl animate-pulse"
-        >
-        </div>
-        <div
-          class="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-400/20 rounded-full blur-3xl animate-pulse delay-1000"
-        >
-        </div>
-        <div
-          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse delay-500"
-        >
-        </div>
+      <div
+        class="absolute bottom-20 right-10 w-80 h-80 bg-violet-500/20 rounded-full blur-3xl animate-float-delayed"
+      >
+      </div>
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-float-slow"
+      >
       </div>
 
       <div class="container mx-auto px-4 py-20 relative z-10">
         <div class="max-w-5xl mx-auto text-center">
-          <!-- Badge profesional -->
+          <!-- Badge -->
           <div
-            class="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-full px-4 py-2 mb-8 shadow-lg"
+            class="inline-flex items-center gap-3 glass rounded-full px-5 py-2.5 mb-8 border border-cyan-500/30"
           >
-            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span class="text-sm font-medium text-gray-700 dark:text-gray-300"
+            <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse">
+            </div>
+            <span class="text-sm font-medium text-slate-300"
               >Disponible para proyectos</span
             >
           </div>
 
-          <!-- Título principal con animación -->
+          <!-- Title -->
           <div class="mb-8 space-y-4">
             <h1
-              class="text-3xl md:text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
+              class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
             >
               Hola, Bienvenido a
-              <span
-                class="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent animate-gradient-x"
-              >
-                Roelcode.com
-              </span>
+              <span class="text-gradient-cyan block mt-2"> Roelcode.com </span>
             </h1>
           </div>
 
-          <!-- Descripción profesional mejorada -->
-          <div class="max-w-4xl mx-auto mb-12">
-            <p
-              class="text-md md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8 text-center"
-            >
-              Descubre mis cursos de Udemy, tutoriales en YouTube y contenido
-              exclusivo en Facebook y TikTok. Conviértete en un experto en
-              programación y desarrollo web con recursos creados especialmente
-              para ti.
+          <!-- Description -->
+          <div class="max-w-3xl mx-auto mb-12">
+            <p class="text-lg md:text-xl text-slate-300 leading-relaxed">
+              Descubre mis cursos de
+              <span class="text-cyan-400 font-semibold">Udemy</span>, tutoriales
+              en
+              <span class="text-red-400 font-semibold">YouTube</span>
+              y contenido exclusivo. Conviértete en un
+              <span class="text-emerald-400 font-semibold"
+                >experto en programación</span
+              >
+              con recursos creados especialmente para ti.
             </p>
           </div>
 
-          <!-- CTA Buttons simplificados -->
+          <!-- CTA Buttons -->
           <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button variant="primary" size="lg" href="/cursos" class="group">
-              <Icon
-                name="courses"
-                slot="icon"
-                class="group-hover:scale-110 transition-transform"
-              />
+            <a
+              href="/cursos"
+              class="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25 hover:scale-105"
+            >
+              <Icon name="courses" class="w-5 h-5 mr-2" />
               Explorar Cursos
-              <span
-                class="ml-2 opacity-0 group-hover:opacity-100 transition-opacity"
-                >→</span
-              >
-            </Button>
-            <Button variant="outline" size="lg" href="/acerca-de" class="group">
               <Icon
-                name="user"
-                slot="icon"
-                class="group-hover:scale-110 transition-transform"
+                name="arrow-right"
+                class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
               />
+            </a>
+            <a
+              href="/acerca-de"
+              class="group inline-flex items-center justify-center px-8 py-4 glass border border-slate-600 hover:border-cyan-500/50 text-white font-semibold rounded-xl transition-all duration-300 hover:bg-white/5"
+            >
+              <Icon name="user" class="w-5 h-5 mr-2" />
               Conoce mi Historia
-            </Button>
+            </a>
           </div>
 
-          <!-- Métricas rápidas -->
-          <div
-            class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto mb-16"
-          >
-            <div class="text-center">
-              <div
-                class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2"
-              >
-                8+
-              </div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">
-                Cursos disponibles
-              </div>
+          <!-- Stats Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            <div class="glass-dark rounded-2xl p-6 border border-slate-700/50">
+              <div class="text-3xl font-bold text-gradient-cyan mb-2">8+</div>
+              <div class="text-sm text-slate-400">Cursos disponibles</div>
             </div>
-            <div class="text-center">
-              <div
-                class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2"
-              >
+            <div class="glass-dark rounded-2xl p-6 border border-slate-700/50">
+              <div class="text-3xl font-bold text-gradient-cyan mb-2">
                 180K+
               </div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">
-                Estudiantes en Udemy
-              </div>
+              <div class="text-sm text-slate-400">Estudiantes en Udemy</div>
             </div>
-            <div class="text-center">
-              <div
-                class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2"
-              >
-                8+
-              </div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">
-                Años de Experiencia
-              </div>
+            <div class="glass-dark rounded-2xl p-6 border border-slate-700/50">
+              <div class="text-3xl font-bold text-gradient-cyan mb-2">8+</div>
+              <div class="text-sm text-slate-400">Años de Experiencia</div>
             </div>
           </div>
 
-          <!-- Scroll Indicator mejorado -->
-          <div class="animate-bounce">
-            <div class="flex flex-col items-center gap-2">
-              <span class="text-sm text-gray-500 dark:text-gray-400 font-medium"
-                >Descubre más</span
+          <!-- Scroll Indicator -->
+          <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+            <div class="flex flex-col items-center text-slate-400">
+              <span class="text-sm mb-2">Descubre más</span>
+              <div
+                class="w-6 h-10 border-2 border-slate-500/50 rounded-full flex justify-center pt-2"
               >
-              <Icon name="arrow-line-down" class="w-6 h-6 text-gray-400" />
+                <div class="w-1.5 h-3 bg-cyan-400 rounded-full animate-bounce">
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -217,21 +196,3 @@ const organizationSchema = {
     <UdemyInfoSection />
   </main>
 </Layout>
-
-<style>
-  @keyframes gradient-x {
-    0%,
-    100% {
-      background-size: 200% 200%;
-      background-position: left center;
-    }
-    50% {
-      background-size: 200% 200%;
-      background-position: right center;
-    }
-  }
-
-  .animate-gradient-x {
-    animation: gradient-x 3s ease infinite;
-  }
-</style>

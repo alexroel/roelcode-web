@@ -1,11 +1,11 @@
-import imgCurosWeb from "@/assets/udemy-courses/desarrollo-web.jpg";
-import imgCursoFlask from "@/assets/udemy-courses/curso-flask.jpg";
-import imgCursoGo from "@/assets/udemy-courses/curso-profecional-go.jpg";
-import imgCursoGoGuia from "@/assets/udemy-courses/curso-go-guia.jpg";
-import imgCursoHtmlCss from "@/assets/udemy-courses/html-css.png";
-import imgCursoJava from "@/assets/udemy-courses/curso-java.png";
 import imgCursoPython from "@/assets/udemy-courses/curso-completo-python.jpg";
+import imgCursoFlask from "@/assets/udemy-courses/curso-flask.jpg";
+import imgCursoGoGuia from "@/assets/udemy-courses/curso-go-guia.jpg";
+import imgCursoJava from "@/assets/udemy-courses/curso-java1.jpg";
+import imgCursoGo from "@/assets/udemy-courses/curso-profecional-go.jpg";
 import imgCursoTailwind from "@/assets/udemy-courses/curso-tailwind.png";
+import imgCurosWeb from "@/assets/udemy-courses/desarrollo-web.jpg";
+import imgCursoHtmlCss from "@/assets/udemy-courses/html-css.png";
 
 export interface UdemyCourse {
   id: string;
@@ -27,13 +27,13 @@ export interface UdemyCourse {
 export const udemyCourses: UdemyCourse[] = [
   {
     id: "programacion-desarrollo-web",
-    url: "https://www.udemy.com/course/programacion-desarrollo-web/?couponCode=62393BB",
+    url: "https://www.udemy.com/course/programacion-desarrollo-web/?couponCode=ENERO26",
     image: imgCurosWeb,
-    title: "Escuela de Programación y Desarrollo Web desde cero a Master",
+    title: "Curso de Programación y Desarrollo Web desde cero a Master",
     headline:
       "Aprende programación y desarrollo Web desde cero con lenguajes HTML, CSS, JavaScript, Python, Go (Golang) y Java.",
     popular: true,
-    newCourse: false,
+    newCourse: true,
     rating: 4.4,
     numReviews: 1623,
     hours: 74,
@@ -53,13 +53,13 @@ export const udemyCourses: UdemyCourse[] = [
   },
   {
     id: "curso-flask",
-    url: "https://www.udemy.com/course/curso-flask/?couponCode=B508F9",
+    url: "https://www.udemy.com/course/curso-flask/?couponCode=ENERO26",
     image: imgCursoFlask,
-    title: "Flask - Construye aplicaciones web profesionales con Python",
+    title: "Python Backend con Flask: La Guía Completa de Cero a Experto",
     headline:
       "Aprende Flask y conviértete en un desarrollador web experto con habilidades valiosas para el mercado laboral.",
     popular: true,
-    newCourse: false,
+    newCourse: true,
     rating: 4.7,
     numReviews: 257,
     hours: 10,
@@ -70,13 +70,13 @@ export const udemyCourses: UdemyCourse[] = [
   },
   {
     id: "curso-profecional-go",
-    url: "https://www.udemy.com/course/curso-golang/?couponCode=05CB6D",
+    url: "https://www.udemy.com/course/curso-golang/?couponCode=ENERO26",
     image: imgCursoGo,
-    title: "Curso profesional de Go - De cero a Master 2025",
+    title: "Go (Golang): Curso Completo 2026 – De Cero a Avanzado",
     headline:
       "Aprende lenguaje de Go, Desarrollo Web con Go, Manejo de HTML, CSS, API RESTful com MySQL y ORM con Go",
     popular: true,
-    newCourse: false,
+    newCourse: true,
     rating: 4.7,
     numReviews: 2069,
     hours: 19,
@@ -87,7 +87,7 @@ export const udemyCourses: UdemyCourse[] = [
   },
   {
     id: "curso-go-guia",
-    url: "https://www.udemy.com/course/cursodego-golang/?couponCode=F8BA9FD",
+    url: "https://www.udemy.com/course/cursodego-golang/?couponCode=ENERO26",
     image: imgCursoGoGuia,
     title: "Aprende Go: La guía completa para dominar Golang",
     headline:
@@ -104,9 +104,9 @@ export const udemyCourses: UdemyCourse[] = [
   },
   {
     id: "curso-html-css",
-    url: "https://www.udemy.com/course/html-y-css/?couponCode=924CFB2",
+    url: "https://www.udemy.com/course/html-y-css/?couponCode=ENERO26",
     image: imgCursoHtmlCss,
-    title: "Curso completo de HTML y CSS, Aprende Flexbox, Grid y BEM",
+    title: "Desarrollo Web Frontend: HTML, CSS, Grid, Flexbox y BEM 2026",
     headline:
       "Crea sitios web modernos con HTML y CSS, Domina Flexbox, CSS Grid y BEM. Crea diseños responsivos y optimiza con BEM.",
     popular: false,
@@ -121,13 +121,13 @@ export const udemyCourses: UdemyCourse[] = [
   },
   {
     id: "curso-profesional-java",
-    url: "https://www.udemy.com/course/curso-completo-de-java/?couponCode=ABB3D21",
+    url: "https://www.udemy.com/course/curso-completo-de-java/?couponCode=ENERO26",
     image: imgCursoJava,
-    title: "Curso profesional de Java 2025 –De cero a Master",
+    title: "Java 25: Curso Profesional de Java 2026 – De Cero a Master",
     headline:
       "Aprende a programar en Java desde cero hasta avanzado como Java SE y inicia el desarrollo web con Java",
     popular: true,
-    newCourse: false,
+    newCourse: true,
     rating: 4.5,
     numReviews: 934,
     hours: 16,
@@ -138,9 +138,9 @@ export const udemyCourses: UdemyCourse[] = [
   },
   {
     id: "curso-completo-python",
-    url: "https://www.udemy.com/course/curso-completo-de-python-desde-cero-hasta-experto/?couponCode=B54E5E",
+    url: "https://www.udemy.com/course/curso-completo-de-python-desde-cero-hasta-experto/?couponCode=ENERO26",
     image: imgCursoPython,
-    title: "Curso completo de Python 2025-De cero a Master con Python 3",
+    title: "Curso completo de Python 2026-De cero a Master con Python 3",
     headline:
       "Desarrollo web con Python3, Flask, Django y conoce todo desde cero SQLite3, HTML, CSS para crear aplicaciones WEB",
     popular: true,
@@ -155,13 +155,13 @@ export const udemyCourses: UdemyCourse[] = [
   },
   {
     id: "curso-tailwindcss",
-    url: "https://www.udemy.com/course/curso-tailwindcss/?couponCode=5343B3E",
+    url: "https://www.udemy.com/course/curso-tailwindcss/?couponCode=ENERO26",
     image: imgCursoTailwind,
-    title: "Curso profesional de TailwindCSS V4 desde cero",
+    title: "Tailwind CSS 4: La Guía Definitiva de Cero a Experto 2026",
     headline:
       "Domina TailwindCSS V4 desde cero y crea interfaces modernas, rápidas y responsivas con la metodología Utility-First.",
     popular: false,
-    newCourse: true,
+    newCourse: false,
     rating: 4.9,
     numReviews: 50,
     hours: 7,

@@ -1,6 +1,7 @@
 ---
 import CourseCarousel from "@/components/courses/CourseCarousel.astro";
 import { udemyCourses } from "@/data/udemy-courses";
+import { Icon } from "astro-icon/components";
 
 const popularCourses = udemyCourses
   .filter((course) => course.newCourse === true || course.popular === true)
@@ -8,20 +9,52 @@ const popularCourses = udemyCourses
     // Primero los nuevos, luego los populares
     if (a.newCourse && !b.newCourse) return -1;
     if (!a.newCourse && b.newCourse) return 1;
-    // Si ambos son nuevos o ambos son populares, mantener orden original
     return 0;
   });
 ---
 
-<section class="py-16 bg-gray-100 dark:bg-gray-900">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-bold text-black dark:text-white mb-8 text-center">
-      Cursos Nuevos y Más Destacados
-    </h2>
-    <p class="text-center text-gray-800 mb-8 dark:text-gray-300">
-      Los cursos más populares son los que más estudiantes han elegido. Aquí
-      podrás ver los cursos más populares y los que más estudiantes han elegido.
-    </p>
+<section class="relative py-20 lg:py-28 bg-slate-950 overflow-hidden">
+  <!-- Background Effects -->
+  <div class="absolute inset-0 bg-grid-futuristic opacity-10"></div>
+  <div
+    class="absolute top-0 left-1/3 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 right-1/3 w-80 h-80 bg-emerald-500/5 rounded-full blur-3xl"
+  >
+  </div>
+
+  <div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <div
+        class="inline-flex items-center px-4 py-2 glass rounded-full text-sm font-medium mb-6 border border-cyan-500/30"
+      >
+        <Icon name="star" class="w-4 h-4 text-cyan-400 mr-2" />
+        <span class="text-cyan-300">Destacados</span>
+      </div>
+      <h2 class="text-3xl lg:text-5xl font-bold text-white mb-4">
+        Cursos <span class="text-gradient-cyan">Nuevos y Populares</span>
+      </h2>
+      <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+        Los cursos más elegidos por estudiantes. Descubre las opciones más
+        populares y los últimos lanzamientos.
+      </p>
+    </div>
+
+    <!-- Course Carousel -->
     <CourseCarousel courses={popularCourses} />
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <a
+        href="/cursos"
+        class="inline-flex items-center gap-2 px-8 py-4 glass border border-cyan-500/30 text-white font-semibold rounded-xl transition-all duration-300 hover:bg-white/5 hover:border-cyan-500/50"
+      >
+        Ver Todos los Cursos
+        <Icon name="arrow-right" class="w-5 h-5" />
+      </a>
+    </div>
   </div>
 </section>

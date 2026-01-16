@@ -1,5 +1,4 @@
 ---
-import Button from "../utils/Button.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import type { UdemyCourse } from "../../data/udemy-courses";
@@ -12,7 +11,7 @@ const { course } = Astro.props;
 ---
 
 <div
-  class="course-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col"
+  class="course-card glass-dark rounded-2xl overflow-hidden border border-slate-700/50 hover:border-cyan-500/30 transition-all duration-300 h-full flex flex-col card-3d"
 >
   <div class="relative">
     <Image
@@ -21,20 +20,26 @@ const { course } = Astro.props;
       class="w-full h-48 object-cover"
     />
 
+    <!-- Gradient Overlay -->
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"
+    >
+    </div>
+
     <!-- Badges -->
     <div class="absolute top-4 left-4 flex gap-2">
       {
         course.popular && (
-          <span class="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
-            <Icon name="star" class="w-3 h-3 inline mr-1" />
+          <span class="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg flex items-center gap-1">
+            <Icon name="star" class="w-3 h-3" />
             Popular
           </span>
         )
       }
       {
         course.newCourse && (
-          <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
-            <Icon name="check" class="w-3 h-3 inline mr-1" />
+          <span class="bg-gradient-to-r from-emerald-500 to-green-500 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg flex items-center gap-1">
+            <Icon name="check" class="w-3 h-3" />
             Nuevo
           </span>
         )
@@ -43,87 +48,81 @@ const { course } = Astro.props;
 
     <!-- Rating overlay -->
     <div
-      class="absolute top-4 right-4 bg-black/70 text-white px-2 py-1 rounded-lg text-sm"
+      class="absolute top-4 right-4 glass-dark px-3 py-1.5 rounded-lg text-sm flex items-center gap-1"
     >
-      <Icon name="star" class="w-3 h-3 inline text-yellow-400 mr-1" />
-      {course.rating.toFixed(1)}
+      <Icon name="star" class="w-4 h-4 text-amber-400" />
+      <span class="text-white font-semibold">{course.rating.toFixed(1)}</span>
     </div>
   </div>
 
   <div class="p-6 flex-1 flex flex-col">
     <!-- Title and Description -->
-    <h3
-      class="text-xl font-bold text-gray-900 dark:text-white mb-2 line-clamp-2"
-    >
+    <h3 class="text-xl font-bold text-white mb-2 line-clamp-2">
       {course.title}
     </h3>
-    <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3 flex-1">
+    <p class="text-slate-400 mb-4 line-clamp-3 flex-1">
       {course.headline}
     </p>
 
-    <div class="flex justify-between">
+    <div class="flex justify-between items-center mb-4">
       <!-- Rating and Reviews -->
-      <div class="flex items-center justify-between mb-4">
-        <div class="flex items-center gap-2">
-          <div class="flex items-center">
-            {
-              Array.from({ length: 5 }, (_, i) => (
-                <Icon
-                  name={i < Math.floor(course.rating) ? "star" : "star-half"}
-                  class="w-4 h-4 text-yellow-400"
-                />
-              ))
-            }
-          </div>
-          <span class="text-sm text-gray-600 dark:text-gray-400">
-            ({course.numReviews.toLocaleString()})
-          </span>
+      <div class="flex items-center gap-2">
+        <div class="flex items-center">
+          {
+            Array.from({ length: 5 }, (_, i) => (
+              <Icon
+                name={i < Math.floor(course.rating) ? "star" : "star-half"}
+                class="w-4 h-4 text-amber-400"
+              />
+            ))
+          }
         </div>
+        <span class="text-sm text-slate-500">
+          ({course.numReviews.toLocaleString()})
+        </span>
       </div>
 
       <!-- Course Info -->
-      <div
-        class="flex items-center justify-between mb-4 text-sm text-gray-500 dark:text-gray-400"
-      >
-        <div class="flex items-center gap-4">
-          <span class="flex items-center gap-1">
-            <Icon name="courses" class="w-4 h-4" />
-            {course.numClass} clases
-          </span>
-          <span class="flex items-center gap-1">
-            <Icon name="instructor" class="w-4 h-4" />
-            {course.hours}h
-          </span>
-        </div>
+      <div class="flex items-center gap-3 text-sm text-slate-400">
+        <span class="flex items-center gap-1">
+          <Icon name="courses" class="w-4 h-4 text-cyan-400" />
+          {course.numClass}
+        </span>
+        <span class="flex items-center gap-1">
+          <Icon name="instructor" class="w-4 h-4 text-emerald-400" />
+          {course.hours}h
+        </span>
       </div>
     </div>
 
+    <!-- Separator -->
+    <div class="h-px bg-slate-700/50 mb-4"></div>
+
     <!-- Price and CTA -->
-    <div class="flex items-center justify-between mt-auto">
+    <div class="flex items-center justify-between">
       <div class="flex items-center gap-2">
         {
           course.priceDiscount && (
-            <span class="text-2xl font-bold text-green-600 dark:text-green-400">
+            <span class="text-2xl font-bold text-gradient-cyan">
               ${course.priceDiscount}
             </span>
           )
         }
         <span
-          class={`${course.priceDiscount ? "line-through text-gray-500 text-lg" : "text-2xl font-bold text-gray-900 dark:text-white"}`}
+          class={`${course.priceDiscount ? "line-through text-slate-500 text-lg" : "text-2xl font-bold text-white"}`}
         >
           ${course.price}
         </span>
       </div>
-      <Button
-        variant="primary"
-        size="sm"
+      <a
         href={course.url}
         target="_blank"
-        class="course-cta-btn"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-emerald-500 text-white text-sm font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25 hover:scale-105"
       >
-        <Icon name="udemy" slot="icon" class="w-4 h-4" />
+        <Icon name="udemy" class="w-4 h-4" />
         Ver Curso
-      </Button>
+      </a>
     </div>
   </div>
 </div>
@@ -131,26 +130,5 @@ const { course } = Astro.props;
 <style>
   .course-card {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .course-card:hover {
-    transform: translateY(-4px);
-    box-shadow:
-      0 20px 25px -5px rgba(0, 0, 0, 0.1),
-      0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
-
-  .course-cta-btn {
-    transition: all 0.2s ease;
-  }
-
-  .course-card:hover .course-cta-btn {
-    transform: scale(1.05);
-  }
-
-  @media (max-width: 768px) {
-    .course-card {
-      margin-bottom: 1rem;
-    }
   }
 </style>

@@ -26,12 +26,6 @@ export const socialLinks = [
     "Únete a mi canal para acceder a tutoriales gratuitos, cursos completos de programación y las últimas novedades en tecnología. Contenido educativo sobre desarrollo web, lenguajes de programación y frameworks modernos."
   ),
   new SocialLink(
-    "Facebook",
-    "https://www.facebook.com/alexroelcode",
-    "facebook",
-    "Sígueme para estar al día con mis proyectos, novedades y contenido exclusivo. Comparto regularmente cupones de descuento para mis cursos de Udemy, incluyendo ofertas de hasta 100% de descuento."
-  ),
-  new SocialLink(
     "TikTok",
     "https://www.tiktok.com/@roelcode",
     "tiktok",
